@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C43C74F01CFB1F49002FD03B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C74EF1CFB1F49002FD03B /* AppDelegate.swift */; };
+		C43C74F21CFB1F49002FD03B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C74F11CFB1F49002FD03B /* ViewController.swift */; };
+		C43C74F51CFB1F49002FD03B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C43C74F31CFB1F49002FD03B /* Main.storyboard */; };
+		C43C74F71CFB1F49002FD03B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C43C74F61CFB1F49002FD03B /* Assets.xcassets */; };
+		C43C74FA1CFB1F49002FD03B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C43C74F81CFB1F49002FD03B /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C43C74EC1CFB1F49002FD03B /* cosmetics-keeper-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cosmetics-keeper-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C43C74EF1CFB1F49002FD03B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C43C74F11CFB1F49002FD03B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C43C74F41CFB1F49002FD03B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C43C74F61CFB1F49002FD03B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C43C74F91CFB1F49002FD03B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C43C74FB1CFB1F49002FD03B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C43C74E91CFB1F49002FD03B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C43C74E31CFB1F49002FD03B = {
+			isa = PBXGroup;
+			children = (
+				C43C74EE1CFB1F49002FD03B /* cosmetics-keeper-ios */,
+				C43C74ED1CFB1F49002FD03B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C43C74ED1CFB1F49002FD03B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C43C74EC1CFB1F49002FD03B /* cosmetics-keeper-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C43C74EE1CFB1F49002FD03B /* cosmetics-keeper-ios */ = {
+			isa = PBXGroup;
+			children = (
+				C43C74EF1CFB1F49002FD03B /* AppDelegate.swift */,
+				C43C74F11CFB1F49002FD03B /* ViewController.swift */,
+				C43C74F31CFB1F49002FD03B /* Main.storyboard */,
+				C43C74F61CFB1F49002FD03B /* Assets.xcassets */,
+				C43C74F81CFB1F49002FD03B /* LaunchScreen.storyboard */,
+				C43C74FB1CFB1F49002FD03B /* Info.plist */,
+			);
+			path = "cosmetics-keeper-ios";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C43C74EB1CFB1F49002FD03B /* cosmetics-keeper-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C43C74FE1CFB1F49002FD03B /* Build configuration list for PBXNativeTarget "cosmetics-keeper-ios" */;
+			buildPhases = (
+				C43C74E81CFB1F49002FD03B /* Sources */,
+				C43C74E91CFB1F49002FD03B /* Frameworks */,
+				C43C74EA1CFB1F49002FD03B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "cosmetics-keeper-ios";
+			productName = "cosmetics-keeper-ios";
+			productReference = C43C74EC1CFB1F49002FD03B /* cosmetics-keeper-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C43C74E41CFB1F49002FD03B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = tinyideas;
+				TargetAttributes = {
+					C43C74EB1CFB1F49002FD03B = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = C43C74E71CFB1F49002FD03B /* Build configuration list for PBXProject "cosmetics-keeper-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C43C74E31CFB1F49002FD03B;
+			productRefGroup = C43C74ED1CFB1F49002FD03B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C43C74EB1CFB1F49002FD03B /* cosmetics-keeper-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C43C74EA1CFB1F49002FD03B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C43C74FA1CFB1F49002FD03B /* LaunchScreen.storyboard in Resources */,
+				C43C74F71CFB1F49002FD03B /* Assets.xcassets in Resources */,
+				C43C74F51CFB1F49002FD03B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C43C74E81CFB1F49002FD03B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C43C74F21CFB1F49002FD03B /* ViewController.swift in Sources */,
+				C43C74F01CFB1F49002FD03B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C43C74F31CFB1F49002FD03B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C43C74F41CFB1F49002FD03B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C43C74F81CFB1F49002FD03B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C43C74F91CFB1F49002FD03B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C43C74FC1CFB1F49002FD03B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C43C74FD1CFB1F49002FD03B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C43C74FF1CFB1F49002FD03B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "cosmetics-keeper-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tinyideas.cosmetics-keeper-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C43C75001CFB1F49002FD03B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "cosmetics-keeper-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tinyideas.cosmetics-keeper-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C43C74E71CFB1F49002FD03B /* Build configuration list for PBXProject "cosmetics-keeper-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C43C74FC1CFB1F49002FD03B /* Debug */,
+				C43C74FD1CFB1F49002FD03B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C43C74FE1CFB1F49002FD03B /* Build configuration list for PBXNativeTarget "cosmetics-keeper-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C43C74FF1CFB1F49002FD03B /* Debug */,
+				C43C75001CFB1F49002FD03B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C43C74E41CFB1F49002FD03B /* Project object */;
+}

@@ -22,10 +22,9 @@
 		C43C751C1CFB9858002FD03B /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = C43C75101CFB9858002FD03B /* Icon-Small.png */; };
 		C43C751D1CFB9858002FD03B /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C43C75111CFB9858002FD03B /* Icon-Small@2x.png */; };
 		C43C751E1CFB9858002FD03B /* Icon-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C43C75121CFB9858002FD03B /* Icon-Small@3x.png */; };
-		C461E8001CFC8A96004BB931 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461E7FF1CFC8A96004BB931 /* MainViewController.swift */; };
 		C461E8021CFC8AE6004BB931 /* CosmeticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461E8011CFC8AE6004BB931 /* CosmeticsDataSource.swift */; };
-		C461E8041CFC99A4004BB931 /* CosmeticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461E8031CFC99A4004BB931 /* CosmeticsViewController.swift */; };
-		C461E8061CFC9A3A004BB931 /* CosmeticsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461E8051CFC9A3A004BB931 /* CosmeticsItemViewController.swift */; };
+		C461E8041CFC99A4004BB931 /* CosmeticsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461E8031CFC99A4004BB931 /* CosmeticsListViewController.swift */; };
+		C461E8061CFC9A3A004BB931 /* CosmeticsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461E8051CFC9A3A004BB931 /* CosmeticsDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,10 +45,9 @@
 		C43C75101CFB9858002FD03B /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
 		C43C75111CFB9858002FD03B /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		C43C75121CFB9858002FD03B /* Icon-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@3x.png"; sourceTree = "<group>"; };
-		C461E7FF1CFC8A96004BB931 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C461E8011CFC8AE6004BB931 /* CosmeticsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmeticsDataSource.swift; sourceTree = "<group>"; };
-		C461E8031CFC99A4004BB931 /* CosmeticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmeticsViewController.swift; sourceTree = "<group>"; };
-		C461E8051CFC9A3A004BB931 /* CosmeticsItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmeticsItemViewController.swift; sourceTree = "<group>"; };
+		C461E8031CFC99A4004BB931 /* CosmeticsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmeticsListViewController.swift; sourceTree = "<group>"; };
+		C461E8051CFC9A3A004BB931 /* CosmeticsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmeticsDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,9 +129,8 @@
 		C461E7FD1CFC8A63004BB931 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C461E7FF1CFC8A96004BB931 /* MainViewController.swift */,
-				C461E8031CFC99A4004BB931 /* CosmeticsViewController.swift */,
-				C461E8051CFC9A3A004BB931 /* CosmeticsItemViewController.swift */,
+				C461E8031CFC99A4004BB931 /* CosmeticsListViewController.swift */,
+				C461E8051CFC9A3A004BB931 /* CosmeticsDetailViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -178,6 +175,7 @@
 				TargetAttributes = {
 					C43C74EB1CFB1F49002FD03B = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 525U4FV8P3;
 					};
 				};
 			};
@@ -229,10 +227,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C43C74F01CFB1F49002FD03B /* AppDelegate.swift in Sources */,
-				C461E8041CFC99A4004BB931 /* CosmeticsViewController.swift in Sources */,
+				C461E8041CFC99A4004BB931 /* CosmeticsListViewController.swift in Sources */,
 				C461E8021CFC8AE6004BB931 /* CosmeticsDataSource.swift in Sources */,
-				C461E8061CFC9A3A004BB931 /* CosmeticsItemViewController.swift in Sources */,
-				C461E8001CFC8A96004BB931 /* MainViewController.swift in Sources */,
+				C461E8061CFC9A3A004BB931 /* CosmeticsDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,11 +334,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "cosmetics-keeper-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tinyideas.cosmetics-keeper-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -349,11 +349,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "cosmetics-keeper-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tinyideas.cosmetics-keeper-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -1,8 +1,10 @@
 import Foundation
 import UIKit
 
-class CosmeticsItemViewController: UIViewController {
-    var lblName:UILabel = UILabel()
+class CosmeticsDetailViewController: UIViewController {
+
+    var lblName:UILabel?
+    var ready = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -10,9 +12,10 @@ class CosmeticsItemViewController: UIViewController {
     }
     
     private func initViews() {
+        lblName = UILabel()
         let stackView = UIStackView()
         self.view = stackView
-        stackView.addArrangedSubview(lblName)
+        stackView.addArrangedSubview(lblName!)
     }
     
     override func didReceiveMemoryWarning() {

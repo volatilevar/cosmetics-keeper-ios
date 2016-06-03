@@ -25,6 +25,7 @@
 		C461E8021CFC8AE6004BB931 /* CosmeticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461E8011CFC8AE6004BB931 /* CosmeticsDataSource.swift */; };
 		C461E8041CFC99A4004BB931 /* CosmeticsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461E8031CFC99A4004BB931 /* CosmeticsListViewController.swift */; };
 		C461E8061CFC9A3A004BB931 /* CosmeticsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461E8051CFC9A3A004BB931 /* CosmeticsDetailViewController.swift */; };
+		C4C206631D02A28D00B3C213 /* CosmeticsDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C206621D02A28D00B3C213 /* CosmeticsDetailCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		C461E8011CFC8AE6004BB931 /* CosmeticsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmeticsDataSource.swift; sourceTree = "<group>"; };
 		C461E8031CFC99A4004BB931 /* CosmeticsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmeticsListViewController.swift; sourceTree = "<group>"; };
 		C461E8051CFC9A3A004BB931 /* CosmeticsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmeticsDetailViewController.swift; sourceTree = "<group>"; };
+		C4C206621D02A28D00B3C213 /* CosmeticsDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmeticsDetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,7 @@
 		C43C74EE1CFB1F49002FD03B /* cosmetics-keeper-ios */ = {
 			isa = PBXGroup;
 			children = (
-				C461E7FD1CFC8A63004BB931 /* controllers */,
+				C461E7FD1CFC8A63004BB931 /* ui */,
 				C461E7FE1CFC8A63004BB931 /* data */,
 				C43E496D1CFBA3400049DB5E /* library */,
 				C43C75031CFB981D002FD03B /* resources */,
@@ -126,12 +128,14 @@
 			path = library;
 			sourceTree = "<group>";
 		};
-		C461E7FD1CFC8A63004BB931 /* controllers */ = {
+		C461E7FD1CFC8A63004BB931 /* ui */ = {
 			isa = PBXGroup;
 			children = (
 				C461E8031CFC99A4004BB931 /* CosmeticsListViewController.swift */,
 				C461E8051CFC9A3A004BB931 /* CosmeticsDetailViewController.swift */,
+				C4C206621D02A28D00B3C213 /* CosmeticsDetailCell.swift */,
 			);
+			name = ui;
 			path = controllers;
 			sourceTree = "<group>";
 		};
@@ -230,6 +234,7 @@
 				C461E8041CFC99A4004BB931 /* CosmeticsListViewController.swift in Sources */,
 				C461E8021CFC8AE6004BB931 /* CosmeticsDataSource.swift in Sources */,
 				C461E8061CFC9A3A004BB931 /* CosmeticsDetailViewController.swift in Sources */,
+				C4C206631D02A28D00B3C213 /* CosmeticsDetailCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

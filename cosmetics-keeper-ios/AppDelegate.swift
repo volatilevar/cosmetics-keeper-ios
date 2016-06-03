@@ -13,9 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let sVC = UISplitViewController()
         self.window!.rootViewController = sVC
         let clVC = CosmeticsListViewController();
-        let nc = UINavigationController(rootViewController: clVC)
+        let clNC = UINavigationController(rootViewController: clVC)
         let cdVC = CosmeticsDetailViewController();
-        sVC.viewControllers = [nc,cdVC]
+        let cdNC = UINavigationController(rootViewController: cdVC)
+        sVC.viewControllers = [clNC,cdNC]
         sVC.delegate = clVC;
         
         self.window!.makeKeyAndVisible()

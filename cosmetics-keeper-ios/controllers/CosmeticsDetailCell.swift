@@ -48,5 +48,16 @@ class CosmeticsDetailCell: UITableViewCell {
     func itemStatePickerCancel() {
         resignFirstResponder()
     }
+    
+    func itemDOMPickerDone() {
+        resignFirstResponder()
+        tableVC!.dataSource.getItem(tableVC!.index!).dom = tableVC!.itemDOMPicker.date
+        tableVC!.tableView.reloadData()
+    }
+    
+    func itemDOMPickerCancel() {
+        resignFirstResponder()
+    }
+
 
 }

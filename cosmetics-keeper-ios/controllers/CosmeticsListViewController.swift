@@ -36,6 +36,8 @@ class CosmeticsListViewController: UITableViewController, UISplitViewControllerD
             }
         }
         
+        cdVC?.listTVC = self
+        
         let btnitmAdd = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(addItem))
         let btnitmMenu = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: nil)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
@@ -49,7 +51,7 @@ class CosmeticsListViewController: UITableViewController, UISplitViewControllerD
     }
     
     func addItem() {
-        let item = Item(name: "Untitled item")
+        let item = Item(name: "(untitled item)")
         dataSource.addItem(item)
         self.tableView.reloadData()
         cdVC?.updateContent(dataSource.count - 1)

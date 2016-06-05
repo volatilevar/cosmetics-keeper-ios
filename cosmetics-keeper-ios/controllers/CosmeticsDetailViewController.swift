@@ -5,9 +5,11 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
 
     var ready = false
     let dataSource = CosmeticsDataSource.getUniqueInstance()
+    var listTVC: CosmeticsListViewController?
     var index: Int?
     static let CellId = "CosmeticsDetailTableCellId"
     var itemStatePickerView = UIPickerView()
+    var itemDOMPicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +51,7 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch (section) {
         case 0:
-            return 3
+            return 4
         default:
             return -1
         }
@@ -78,6 +80,18 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
                 tb.items = [btnitemDone, btnitemSpace, btnitemCancel]
                 cell.overrideInputAccessoryView(tb)
                 cell.overrideInputView(itemStatePickerView)
+            case 3:
+                cell.textLabel!.text = "Date of Manufacture"
+                let df = NSDateFormatter()
+                df.dateFormat = "yyyy-MM-dd"
+                cell.detailTextLabel!.text = df.stringFromDate(dataSource.getItem(index!).dom!);
+                let btnitemDone = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: cell, action: #selector(cell.itemDOMPickerDone))
+                let btnitemCancel = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: cell, action: #selector(cell.itemDOMPickerCancel))
+                let btnitemSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: cell, action: nil)
+                let tb = UIToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 32))
+                tb.items = [btnitemDone, btnitemSpace, btnitemCancel]
+                cell.overrideInputAccessoryView(tb)
+                cell.overrideInputView(itemDOMPicker)
             default:
                 break
             }
@@ -92,6 +106,8 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
         let cell:CosmeticsDetailCell = tableView.cellForRowAtIndexPath(indexPath) as! CosmeticsDetailCell
         cell.resignFirstResponder()
         
+        let item = self.dataSource.getItem(self.index!)
+        
         switch (indexPath.section) {
         case 0:
             switch (indexPath.row) {
@@ -101,12 +117,12 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {
                     (aa: UIAlertAction!) in
                     let newName = alert.textFields![0].text!
-                    self.dataSource.getItem(self.index!).name = newName
+                    item.name = newName
                     self.tableView.reloadData()
+                    self.listTVC!.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: self.index!, inSection: 0)], withRowAnimation: UITableViewRowAnimation.None)
                     self.navigationItem.title = newName;
                 }))
                 alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
-                    let item = self.dataSource.getItem(self.index!)
                     textField.text = item.name == "" ? "e.g. Estee Launder ANR" : item.name
                 })
                 self.presentViewController(alert, animated: true, completion: nil)
@@ -115,16 +131,20 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
                 alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {
                     (aa: UIAlertAction!) in
-                    self.dataSource.getItem(self.index!).quantity = Int(alert.textFields![0].text!)!
+                    item.quantity = Int(alert.textFields![0].text!)!
                     self.tableView.reloadData()
                 }))
                 alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
-                    let item = self.dataSource.getItem(self.index!)
+                    
                     textField.text = String(item.quantity)
                     textField.keyboardType = UIKeyboardType.NumberPad
                 })
                 self.presentViewController(alert, animated: true, completion: nil)
             case 2:
+                itemStatePickerView.selectRow(item.state.rawValue, inComponent: 0, animated: true)
+                cell.becomeFirstResponder()
+            case 3:
+                itemDOMPicker.setDate(item.dom!, animated: true)
                 cell.becomeFirstResponder()
             default:
                 break

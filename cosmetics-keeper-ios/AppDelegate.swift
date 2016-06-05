@@ -3,8 +3,9 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let dataSource = CosmeticsDataSource.getUniqueInstance()
     var window: UIWindow?
-
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -27,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
+        let succ = dataSource.persist()
+        if !succ {
+            print("Data failed to persist")
+        }
     }
 
     func applicationWillEnterForeground(application: UIApplication) {

@@ -29,8 +29,10 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
         tableView.registerClass(CosmeticsDetailCell.self, forCellReuseIdentifier: CosmeticsDetailViewController.CellId)
         itemStatePickerView.delegate = self
         itemStatePickerView.dataSource = self
+        itemDOMPicker.datePickerMode = UIDatePickerMode.Date
+        itemRemindByPicker.datePickerMode = UIDatePickerMode.Date
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -94,7 +96,8 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
                 cell.textLabel!.text = "Date of Manufacture"
                 let df = NSDateFormatter()
                 df.dateFormat = "yyyy-MM-dd"
-                cell.detailTextLabel!.text = df.stringFromDate(dataSource.getItem(index!).dom!);
+                let dom = dataSource.getItem(index!).dom
+                if dom != nil { cell.detailTextLabel!.text = df.stringFromDate(dataSource.getItem(index!).dom!) }
                 let btnitemDone = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: cell, action: #selector(cell.itemDOMPickerDone))
                 let btnitemCancel = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: cell, action: #selector(cell.itemDOMPickerCancel))
                 let btnitemSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: cell, action: nil)
@@ -111,7 +114,8 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
                 cell.textLabel!.text = "Date"
                 let df = NSDateFormatter()
                 df.dateFormat = "yyyy-MM-dd"
-                cell.detailTextLabel!.text = df.stringFromDate(dataSource.getItem(index!).remindBy!);
+                let remindBy = dataSource.getItem(index!).remindBy
+                if remindBy != nil { cell.detailTextLabel!.text = df.stringFromDate(dataSource.getItem(index!).remindBy!) }
                 let btnitemDone = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: cell, action: #selector(cell.itemRemindByPickerDone))
                 let btnitemCancel = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: cell, action: #selector(cell.itemRemindByPickerCancel))
                 let btnitemSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: cell, action: nil)
@@ -185,7 +189,7 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
                 itemStatePickerView.selectRow(item.state.rawValue, inComponent: 0, animated: true)
                 cell.becomeFirstResponder()
             case 3:
-                itemDOMPicker.setDate(item.dom!, animated: true)
+                if item.dom != nil { itemDOMPicker.setDate(item.dom!, animated: true) }
                 cell.becomeFirstResponder()
             default:
                 break
@@ -193,7 +197,7 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
         case 1:
             switch(indexPath.row) {
             case 0:
-                itemRemindByPicker.setDate(item.remindBy!, animated: true)
+                if item.remindBy != nil { itemRemindByPicker.setDate(item.remindBy!, animated: true) }
                 cell.becomeFirstResponder()
             default:
                 break

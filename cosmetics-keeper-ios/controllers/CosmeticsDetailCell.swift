@@ -15,7 +15,7 @@ class CosmeticsDetailCell: UITableViewCell {
         super.init(coder: aDecoder)!
     }
     
-    func overrideInputView(inputView: UIView) {
+    func overrideInputView(inputView: UIView?) {
         self.newInputView = inputView
     }
 
@@ -25,7 +25,7 @@ class CosmeticsDetailCell: UITableViewCell {
         }
     }
     
-    func overrideInputAccessoryView(inputAccessoryView: UIView) {
+    func overrideInputAccessoryView(inputAccessoryView: UIView?) {
         self.newInputAccessoryView = inputAccessoryView
     }
     
@@ -57,6 +57,22 @@ class CosmeticsDetailCell: UITableViewCell {
     
     func itemDOMPickerCancel() {
         resignFirstResponder()
+    }
+
+    func itemRemindByPickerDone() {
+        resignFirstResponder()
+        tableVC!.dataSource.getItem(tableVC!.index!).remindBy = tableVC!.itemRemindByPicker.date
+        tableVC!.tableView.reloadData()
+    }
+
+    func itemRemindByPickerCancel() {
+        resignFirstResponder()
+    }
+
+    func itemNotesDone() {
+        resignFirstResponder()
+        tableVC!.dataSource.getItem(tableVC!.index!).notes = tableVC!.itemNotes.text
+        tableVC!.tableView.reloadData()
     }
 
 

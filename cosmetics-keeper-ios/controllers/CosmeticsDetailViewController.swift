@@ -10,6 +10,8 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
     static let CellId = "CosmeticsDetailTableCellId"
     var itemStatePickerView = UIPickerView()
     var itemDOMPicker = UIDatePicker()
+    var itemRemindByPicker = UIDatePicker()
+    var itemNotes = UITextView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,13 +38,17 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
     // MARK: - Table
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch (section) {
         case 0:
-            return "Item Information"
+            return "Basic Information"
+        case 1:
+            return "Reminder"
+        case 2:
+            return "Notes"
         default:
             return "INVALID"
         }
@@ -52,6 +58,10 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
         switch (section) {
         case 0:
             return 4
+        case 1:
+            return 1
+        case 2:
+            return 1
         default:
             return -1
         }
@@ -92,6 +102,37 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
                 tb.items = [btnitemDone, btnitemSpace, btnitemCancel]
                 cell.overrideInputAccessoryView(tb)
                 cell.overrideInputView(itemDOMPicker)
+            default:
+                break
+            }
+        case 1:
+            switch (indexPath.row) {
+            case 0:
+                cell.textLabel!.text = "Date"
+                let df = NSDateFormatter()
+                df.dateFormat = "yyyy-MM-dd"
+                cell.detailTextLabel!.text = df.stringFromDate(dataSource.getItem(index!).remindBy!);
+                let btnitemDone = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: cell, action: #selector(cell.itemRemindByPickerDone))
+                let btnitemCancel = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: cell, action: #selector(cell.itemRemindByPickerCancel))
+                let btnitemSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: cell, action: nil)
+                let tb = UIToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 32))
+                tb.items = [btnitemDone, btnitemSpace, btnitemCancel]
+                cell.overrideInputAccessoryView(tb)
+                cell.overrideInputView(itemRemindByPicker)
+            default:
+                break
+            }
+        case 2:
+            switch (indexPath.row) {
+            case 0:
+                itemNotes.frame = CGRect(x: 0, y: 0, width: cell.contentView.frame.width, height: 200)
+                itemNotes.font = UIFont.systemFontOfSize(15)
+                cell.contentView.addSubview(itemNotes)
+                let btnitemDone = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: cell, action: #selector(cell.itemNotesDone))
+                let tb = UIToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 32))
+                tb.items = [btnitemDone]
+                cell.overrideInputAccessoryView(tb)
+                cell.accessoryView = UIView()
             default:
                 break
             }
@@ -149,9 +190,27 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
             default:
                 break
             }
+        case 1:
+            switch(indexPath.row) {
+            case 0:
+                itemRemindByPicker.setDate(item.remindBy!, animated: true)
+                cell.becomeFirstResponder()
+            default:
+                break
+            }
+        case 2:
+            break;
         default:
             break
         }
+    }
+
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.section == 2 {
+            return 200
+        }
+
+        return 44
     }
     
     // MARK: - Item state picker view

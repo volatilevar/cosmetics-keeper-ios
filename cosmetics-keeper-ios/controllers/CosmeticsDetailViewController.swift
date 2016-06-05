@@ -6,8 +6,8 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
     var ready = false
     let dataSource = CosmeticsDataSource.getUniqueInstance()
     var index: Int?
-    var stackView: UIStackView?
     static let CellId = "CosmeticsDetailTableCellId"
+    var itemStatePickerView = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,8 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
     
     private func initViews() {
         tableView.registerClass(CosmeticsDetailCell.self, forCellReuseIdentifier: CosmeticsDetailViewController.CellId)
+        itemStatePickerView.delegate = self
+        itemStatePickerView.dataSource = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,6 +57,7 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:CosmeticsDetailCell = tableView.dequeueReusableCellWithIdentifier(CosmeticsDetailViewController.CellId, forIndexPath: indexPath) as!CosmeticsDetailCell
+        cell.tableVC = self
         
         switch (indexPath.section) {
         case 0:
@@ -68,14 +71,13 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
             case 2:
                 cell.textLabel!.text = "State"
                 cell.detailTextLabel!.text = dataSource.getItem(index!).state.description;
-                let picker = UIPickerView()
-                picker.delegate = self
-                picker.dataSource = self
-                cell.overrideInputView(picker)
-                let btnitemDone = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: cell, action: #selector(resignFirstResponder))
+                let btnitemDone = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: cell, action: #selector(cell.itemStatePickerDone))
+                let btnitemCancel = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: cell, action: #selector(cell.itemStatePickerCancel))
+                let btnitemSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: cell, action: nil)
                 let tb = UIToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 32))
-                tb.items = [btnitemDone]
+                tb.items = [btnitemDone, btnitemSpace, btnitemCancel]
                 cell.overrideInputAccessoryView(tb)
+                cell.overrideInputView(itemStatePickerView)
             default:
                 break
             }
@@ -132,6 +134,8 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
         }
     }
     
+    // MARK: - Item state picker view
+    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -143,6 +147,5 @@ class CosmeticsDetailViewController: UITableViewController, UIPickerViewDelegate
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return CosmeticsState(rawValue: row)?.description;
     }
-
 
 }

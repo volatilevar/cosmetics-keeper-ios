@@ -4,6 +4,7 @@ class CosmeticsDetailCell: UITableViewCell {
     
     private var newInputView: UIView?
     private var newInputAccessoryView: UIView?
+    var tableVC: CosmeticsDetailViewController?
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: UITableViewCellStyle.Value1, reuseIdentifier: reuseIdentifier)
@@ -37,4 +38,15 @@ class CosmeticsDetailCell: UITableViewCell {
     override func canBecomeFirstResponder() -> Bool {
         return true;
     }
+    
+    func itemStatePickerDone() {
+        resignFirstResponder()
+        tableVC!.dataSource.getItem(tableVC!.index!).state = CosmeticsState(rawValue: tableVC!.itemStatePickerView.selectedRowInComponent(0))!
+        tableVC!.tableView.reloadData()
+    }
+    
+    func itemStatePickerCancel() {
+        resignFirstResponder()
+    }
+
 }
